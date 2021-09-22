@@ -1,0 +1,503 @@
+body {
+    background-image: url("images/london.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(133, 129, 124, 0.411);
+    min-height: 100vh;
+}
+
+/* current temperature */
+.temperature {
+    font-size: 120px;
+    color:rgb(53, 52, 52);
+    padding-bottom: 18px;
+    margin: 0;
+    text-shadow: 4px 3px 0 #fff;
+}
+
+#date, .feelsLike, #time, .conditions {
+    font-size: 20px;
+    color:rgb(53, 52, 52);
+    margin: 0;
+}
+
+#date {
+    margin-top: 15px;
+}
+
+.conditionsBlock img {
+    height: 80px;
+}
+
+.conditionsBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentWeatherContainer {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    font-family: 'Kaisei HarunoUmi', serif;
+    margin-top: 170px;
+}
+
+.currentWeather {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.164);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(233, 233, 233, 0.534);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.conditionsBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* a city info */
+
+.locationInfo {
+    display: flex;
+    position: absolute;
+    top: 10px;
+}
+
+.cityBlock {
+    position: absolute;
+    left: 80px;
+    top: 20px
+}
+
+.questionAboutCity {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    margin-left: 20px;
+}
+
+.buttonsOfQuestion {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.questionBlock {
+    background-color: rgba(255, 255, 255, 0.268);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 1s;
+    margin-top: 15px;
+    z-index: 2;
+}
+
+.triangular {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid rgba(255, 255, 255, 0.268);
+    top: -20px;
+    left: 70px;
+    position: relative;
+}
+
+
+.buttonsOfQuestion button {
+    font-size: 13px;
+    color:rgb(53, 52, 52);
+    font-family: 'Kaisei HarunoUmi', serif;
+    padding: 2px 20px;
+    border-radius: 10px;
+    border: 2px;
+    cursor: pointer;
+}
+
+.questionText {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -15px;
+}
+
+.questionText p {
+    font-family: 'Kaisei HarunoUmi', serif;
+    font-size: 14px;
+    color:rgb(53, 52, 52);
+    margin-left: 10px;
+    font-family: 'Kaisei HarunoUmi', serif;
+}
+
+.questionText img {
+    height: 20px;
+    cursor: pointer;
+}
+
+
+.cityName {
+    width: inherit;
+    cursor: pointer;
+    margin-left: 25px;
+    color:rgb(53, 52, 52);
+    font-family: 'Kaisei HarunoUmi', serif;
+    font-size: 22px;
+    text-shadow: 0 1px 10px #fff;
+    background-color: rgba(255, 255, 255, 0.452);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff;
+    padding: 10px;
+}
+
+.cityInput {
+    background-color: rgba(255, 255, 255, 0.651);
+    border-radius: 50px;
+    font-size: 30px;
+    text-align: center;
+    color:rgb(53, 52, 52);
+    backdrop-filter: blur(20px);
+    position: relative;
+    left: 25px;
+    height: 80px;
+	-webkit-transition:500ms linear;
+	-moz-transition:500ms linear;
+	-o-transition:500ms linear;
+	-ms-transition:500ms linear;
+	transition:500ms ease;
+    border: none;
+    outline: none
+}
+
+.cityInputSmall {
+    width: 80px;
+}
+
+.cityInput:focus {
+    background-color: #fff;
+    outline: none !important;
+    border: 1px solid #CDF3A2;
+    background-position: left !important
+}
+
+.cityInput::placeholder {
+    font-size: 20px;
+    padding: 20px;
+}
+
+input[type=text]::-webkit-input-placeholder {
+    color: transparent;
+    transition: color .5s;
+    background-image: url(images/location.png);
+    background-position: 25px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+
+.emergence::placeholder {
+    color: rgb(179, 178, 178) !important;
+}
+
+.redBorder {
+    border: 3px solid rgba(221, 87, 87, 0.602) !important;
+}
+
+.weatherContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* fahrenheit to celsius */
+.switchBlock {
+    display: flex;
+    justify-content: end;
+    margin-right: 50px;
+    margin-bottom: -30px
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+}
+
+.switch input {display:none;}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2f2f2;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.slider:before {
+    position: absolute;
+    z-index: 2;
+    content: "";
+    height: 40px;
+    width: 40px;
+    background-color: darkslategrey;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22);
+    -webkit-transition: .4s;
+    transition: all 0.4s ease-in-out;
+}
+.slider:after {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    content: "°F";
+    font-size: 25px;
+    text-align: left !important;
+    line-height: 40px;
+    padding-left: 0;
+    width: 90px;
+    color: #fff;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #ff6702;
+    -webkit-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    transform: translateX(-50px);
+    transition: all 0.4s ease-in-out;
+}
+
+input:checked + .slider:after {
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+    padding-left: 5px;
+}
+
+input:checked + .slider:before {
+    background-color: #fff;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(49px);
+    -ms-transform: translateX(49px);
+    transform: translateX(49px);
+}
+
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 100px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.absolute-no {
+    position: absolute;
+    left: 10px;
+    color: rgb(53, 52, 52);
+    text-align: right !important;
+    font-size: 25px;
+    width: calc(100% - 25px);
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+
+
+/* weather for whole day or 5 days */
+
+.duringTheDay, .fiveDays {
+    display: flex;
+    justify-content: space-around;
+}
+
+.duringTheDayItem, .fiveDaysItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weatherContent {
+    background-color: rgba(255, 255, 255, 0.651);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+}
+
+.timeForTempWholeDay, .tempForTempWholeDay, .day {
+    font-size: 20px;
+    font-family: 'Kaisei HarunoUmi', serif;
+    text-align: center;
+}
+
+.tempForDayMax, .tempForDayMin {
+    margin: 0;
+}
+
+.nav-link.active{
+    background-color: rgba(255, 255, 255, 0.651) !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.nav-link {
+    background-color: rgba(79, 82, 79, 0.651) !important;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+
+
+@media all and (max-width: 800px) {
+    .timeForTempWholeDay, .tempForTempWholeDay, .day, .tempForDayMax, .tempForDayMin {
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width: 550px) {
+
+    .cityBlock {
+        top: 8px;
+    }
+
+    .timeForTempWholeDay, .tempForTempWholeDay, .day, .tempForDayMax, .tempForDayMin {
+        font-size: 10px;
+    }
+
+    .fiveDaysItem img {
+        width: 50px
+    }
+
+    .duringTheDayItem img {
+        height: 50px;
+    }
+
+    .weatherContent {
+        padding: 5px;
+    }
+
+    .nav-link, #date, .feelsLike, .conditions, #time, .cityName {
+        font-size: 15px;
+    }
+
+    .questionText p {
+        font-size: 13px !important;
+    }
+
+    .buttonsOfQuestion button {
+        font-size: 10px;
+    }
+
+    #date {
+        font-size: 15px;
+    }
+
+    .temperature {
+        text-shadow: 1px 1px 0 #fff;
+        font-size: 30px;
+        padding-top: 20px;
+    }
+
+    .conditionsBlock img {
+        height: 50px;
+    }
+
+    .currentWeather {
+        width: 280px;
+        height: 280px;
+    }
+
+    .cityInput {
+        height: 50px;
+    }
+
+    .cityInputSmall {
+        width: 50px;
+    }
+
+    input[type=text]::-webkit-input-placeholder {
+        background-position: 12px 10px;
+        background-repeat: no-repeat;
+        background-size: 25px;
+    }
+    .questionAboutCity {
+        margin-left: 0;
+    }
+
+    .currentWeatherContainer {
+        margin-top: 200px;
+    }
+
+    .switch {
+        width: 50px;
+        height: 25px;
+    }
+
+    .switchBlock {
+        margin-right: 25px;
+    }
+
+    .slider:before {
+        height: 25px;
+        width: 25px;
+    }
+    .slider:after {
+        font-size: 15px;
+        line-height: 20px;
+        width: 40px;
+        height: 25px;
+        -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        transform: translateX(-20px);
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(25px);
+        -ms-transform: translateX(25px);
+        transform: translateX(25px);
+    }
+
+    .absolute-no {
+        font-size: 15px;
+        height: 20px;
+        line-height: 20px;
+        padding-left: 15px;
+    }
+}
+
+@media all and (max-width: 360px) {
+    .currentWeatherContainer {
+        margin-top: 110px;
+    }
+    
+    .day, .tempForDayMax, .tempForDayMin {
+        font-size: 9px;
+    }
+
+    .nav-item button{
+        font-size: 10px;
+    }
+}
+
+@media all and (max-width: 280px) {
+    #date {
+        text-align: center;
+    }
+}
