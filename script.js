@@ -49,9 +49,13 @@ async function enterOrEsc(e) {
 
 // receiving time data through timeApi
 let myTime = new Date(1631740436);
+
+
 async function getTime(city) {
+    
     const resultForTime = await fetch(`${timeApi.endpoint}?api_key=${timeApi.key}&location=${city}`);
     const resultReceivedForTime = await resultForTime.json();
+    console.log(resultForTime)
     if (Object.keys(resultReceivedForTime).length != 0) {
         let time = resultReceivedForTime.datetime;
         myTime = new Date(time);

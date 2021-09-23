@@ -118,7 +118,7 @@ body {
 
 .buttonsOfQuestion button {
     font-size: 13px;
-    color:rgb(53, 52, 52);
+    color:rgb(53, 52, 52, 1);
     font-family: 'Kaisei HarunoUmi', serif;
     padding: 2px 20px;
     border-radius: 10px;
@@ -159,6 +159,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px #fff;
     padding: 10px;
+    text-align: center;
 }
 
 .cityInput {
@@ -223,7 +224,7 @@ input[type=text]::-webkit-input-placeholder {
 /* fahrenheit to celsius */
 .switchBlock {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 50px;
     margin-bottom: -30px
 }
