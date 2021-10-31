@@ -57,7 +57,7 @@ async function getTime(city) {
     const resultReceivedForTime = await resultForTime.json();
     console.log(resultForTime)
     if (Object.keys(resultReceivedForTime).length != 0) {
-        let time = resultReceivedForTime.datetime;
+        let time = resultReceivedForTime.datetime.replace(/-/g, "/");
         myTime = new Date(time);
     }
     else return
