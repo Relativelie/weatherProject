@@ -55,7 +55,6 @@ async function getTime(city) {
     
     const resultForTime = await fetch(`${timeApi.endpoint}?api_key=${timeApi.key}&location=${city}`);
     const resultReceivedForTime = await resultForTime.json();
-    console.log(resultForTime)
     if (Object.keys(resultReceivedForTime).length != 0) {
         let time = resultReceivedForTime.datetime.replace(/-/g, "/");
         myTime = new Date(time);
@@ -225,6 +224,8 @@ async function getWeatherForWholeDay(city) {
     for (let i = 0; i < resultReceived.list.length; i++) {
         temperature.push([resultReceived.list[i].dt_txt, resultReceived.list[i].main.temp, resultReceived.list[i].weather[0].main, resultReceived.list[i].weather[0].icon]);
     }
+
+    console.log(resultReceived, city)
     showValueForWholeDay()
     showValueForFiveDays(resultReceived)
 }
@@ -311,8 +312,8 @@ function showValueForFiveDays(value) {
 
     for (let selector = 0; selector < allDays.length; selector++) {
         allDays[selector].textContent = `${months[parseInt(minAndMaxTemp[selector][0].slice(5, 7)) - 1]} ${minAndMaxTemp[selector][0].slice(-2)}`;
-        allMin[selector].textContent = `${Math.round((minAndMaxTemp[selector][2] - 273, 15) * 9 / 5 + 32)}°F`;
-        allMax[selector].textContent = `${Math.round((minAndMaxTemp[selector][1] - 273, 15) * 9 / 5 + 32)}°F`;
+        allMin[selector].textContent = `${Math.round((minAndMaxTemp[selector][2] - 273.15) * 9 / 5 + 32)}°F`;
+        allMax[selector].textContent = `${Math.round((minAndMaxTemp[selector][1] - 273.15) * 9 / 5 + 32)}°F`;
     }
 }
 
