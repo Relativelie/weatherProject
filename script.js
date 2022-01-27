@@ -225,7 +225,6 @@ async function getWeatherForWholeDay(city) {
         temperature.push([resultReceived.list[i].dt_txt, resultReceived.list[i].main.temp, resultReceived.list[i].weather[0].main, resultReceived.list[i].weather[0].icon]);
     }
 
-    console.log(resultReceived, city)
     showValueForWholeDay()
     showValueForFiveDays(resultReceived)
 }
